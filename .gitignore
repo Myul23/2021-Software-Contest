@@ -1,0 +1,12 @@
+.vscode
+__pycache__
+
+# 외부 이용 files
+chromedriver*
+1.BBox_manual_labeling*
+yolov4-custom-functions-master*
+penDetect-main*
+
+# 계획서 정리 안 함
+test.md
+plan.md
