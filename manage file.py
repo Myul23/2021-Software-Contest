@@ -9,8 +9,8 @@ import matplotlib.pyplot as plt
 
 # namespace = ["0"]
 path = "택배박스"
-path1 = "1.BBox_manual_labeling/Images/001"
-path2 = "1.BBox_manual_labeling/Labels/001"
+path1 = "1.BBox_manual_labeling/Images/001_plastic_soda"
+path2 = "1.BBox_manual_labeling/Labels/001_plastic_soda"
 
 # ! 위치로 file 이름을 찾자.
 # for idx, files in enumerate(os.listdir(path1)):
@@ -90,6 +90,27 @@ path2 = "1.BBox_manual_labeling/Labels/001"
 #     text_file = open(s, "w", encoding="UTF-8")
 #     text_file.write(texts)
 #     text_file.close()
+
+
+# ! class name 다르게 준 걸 바꿔주자.
+# for f in os.listdir(path2):
+#     # print(f)
+
+#     s = os.path.join(path2, f)
+#     if not os.path.exists(s):
+#         print(f)
+#         continue
+
+#     text_file = open(s, "r", encoding="UTF-8")
+#     texts = text_file.read()
+#     texts = texts.replace("snackbox", "box")
+#     # print(texts)
+#     text_file.close()
+
+#     text_file = open(s, "w", encoding="UTF-8")
+#     text_file.write(texts)
+#     text_file.close()
+#     # # os.remove(src)
 
 
 # ! Images랑 Label이랑 다른 애가 있다?

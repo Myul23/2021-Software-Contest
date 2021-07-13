@@ -2,6 +2,7 @@ import os
 from PIL import Image
 
 path = "./downloads/"
+# path = "./1.BBox_manual_labeling/Images/001_box"
 
 # kewords = [
 #     "칠성사이다",
@@ -39,9 +40,16 @@ for keword in kewords:
         if img.size != (500, 500):
             img = img.resize((500, 500), Image.ANTIALIAS)
 
-        dst = os.path.join(folder, str(idx) + "." + ".jpg")
+        dst = os.path.join(folder, str(idx) + ".jpg")
         img = img.convert("RGB")
         img.save(dst)
 
         os.remove(src)
         print(f)
+
+# for f in os.listdir(path):
+#     # print(f)
+#     name = f.split(".")[0]
+#     src = os.path.join(path, f)
+#     dst = os.path.join(path, name + ".jpg")
+#     os.rename(src, dst)
