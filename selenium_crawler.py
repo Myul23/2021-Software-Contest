@@ -32,7 +32,7 @@ from bs4 import BeautifulSoup
 #     "비닐",
 # ]
 
-kewords = ["택배박스"]
+kewords = ["피자박스", "치킨박스", "음료수캔"]
 
 # ? browser option set
 # 굳이 web으로의 작동을 볼 필요가 없다면 headless를 사용한다.

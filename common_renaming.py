@@ -26,25 +26,26 @@ path = "./downloads/"
 #     "비닐",
 # ]
 
-kewords = ["택배박스"]
+kewords = ["음료수캔", "박스"]
 
 for keword in kewords:
     folder = os.path.join(path, keword)
-    if len(os.listdir(folder)) != 2000:
-        print(keword + " folder is not enough")
+    # if len(os.listdir(folder)) != 2000:
+    #     print(keword + " folder is not enough")
 
     for idx, f in enumerate(os.listdir(folder)):
         name = f.split(".")
         src = os.path.join(folder, f)
-        img = Image.open(src)
-        if img.size != (500, 500):
-            img = img.resize((500, 500), Image.ANTIALIAS)
+        # img = Image.open(src)
+        # if img.size != (500, 500):
+        #     img = img.resize((500, 500), Image.ANTIALIAS)
 
-        dst = os.path.join(folder, str(idx) + ".jpg")
-        img = img.convert("RGB")
-        img.save(dst)
+        dst = os.path.join(folder, str(idx) + "." + name[-1])
+        os.rename(src, dst)
+        # img = img.convert("RGB")
+        # img.save(dst)
 
-        os.remove(src)
+        # os.remove(src)
         print(f)
 
 # for f in os.listdir(path):

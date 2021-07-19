@@ -8,15 +8,23 @@ import matplotlib.pyplot as plt
 
 
 # namespace = ["0"]
-path = "택배박스"
-path1 = "1.BBox_manual_labeling/Images/001_plastic_soda"
-path2 = "1.BBox_manual_labeling/Labels/001_plastic_soda"
+path = "음료수캔"
+# path1 = "1.BBox_manual_labeling/Images/001_plastic_soda"
+# path2 = "1.BBox_manual_labeling/Labels/001_plastic_soda"
+path1 = "downloads/음료수캔"
 
 # ! 위치로 file 이름을 찾자.
 # for idx, files in enumerate(os.listdir(path1)):
 #     if files.split(".")[0] in namespace:
 #         print(idx)
 #         # break
+
+
+# ! 파일을 제대로 지우지 않아서
+# for f in os.listdir(path1):
+#     name = f.split(".")
+#     if name[1] != "jpg":
+#         os.remove(os.path.join(path1, f))
 
 
 # ! jpg 파일만 열리다니 (심지어 jpeg도 안 됨)
@@ -38,27 +46,27 @@ path2 = "1.BBox_manual_labeling/Labels/001_plastic_soda"
 #         img = img.resize((500, 500), Image.ANTIALIAS)
 
 #         # ! image size 변환에 따른 text 위치값 변환
-#         s = os.path.join(path2, name[0] + ".txt")
-#         if os.path.exists(s):
-#             text_file = open(s, "r", encoding="UTF-8")
+#         # s = os.path.join(path2, name[0] + ".txt")
+#         # if os.path.exists(s):
+#         #     text_file = open(s, "r", encoding="UTF-8")
 
-#             number = text_file.readline()
-#             # print(number)
-#             texts = number
-#             for i in range(int(number)):
-#                 text = text_file.readline()
-#                 n = text.split(" ")
-#                 texts += n[0] + " "
-#                 texts += str(round(float(n[1]) / basic_size[0] * 500)) + " "
-#                 texts += str(round(float(n[2]) / basic_size[1] * 500)) + " "
-#                 texts += str(round(float(n[3]) / basic_size[0] * 500)) + " "
-#                 texts += str(round(float(n[4]) / basic_size[1] * 500)) + "\n"
-#             # print(texts)
-#             text_file.close()
+#         #     number = text_file.readline()
+#         #     # print(number)
+#         #     texts = number
+#         #     for i in range(int(number)):
+#         #         text = text_file.readline()
+#         #         n = text.split(" ")
+#         #         texts += n[0] + " "
+#         #         texts += str(round(float(n[1]) / basic_size[0] * 500)) + " "
+#         #         texts += str(round(float(n[2]) / basic_size[1] * 500)) + " "
+#         #         texts += str(round(float(n[3]) / basic_size[0] * 500)) + " "
+#         #         texts += str(round(float(n[4]) / basic_size[1] * 500)) + "\n"
+#         #     # print(texts)
+#         #     text_file.close()
 
-#             text_file = open(s, "w", encoding="UTF-8")
-#             text_file.write(texts)
-#             text_file.close()
+#         #     text_file = open(s, "w", encoding="UTF-8")
+#         #     text_file.write(texts)
+#         #     text_file.close()
 
 #     dst = os.path.join(path1, name[0] + ".jpg")
 #     img = img.convert("RGB")

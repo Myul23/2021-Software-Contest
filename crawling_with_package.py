@@ -21,7 +21,7 @@
 #     "비닐",
 # ]
 
-kewords = ["택배박스"]
+kewords = ["치킨박스", "피자박스", "음료수캔"]
 
 # * Google, 360 ~ 380개가 최대로 보임.
 # from google_images_download import google_images_download
@@ -35,11 +35,11 @@ kewords = ["택배박스"]
 #         "keywords": quote_plus(keword),
 #         "limit": 1000,
 #         "print_urls": True,
-#         "chromedriver": "C:/Github Projects/2021-소프트웨어-경진대회/chromedriver",
+#         "chromedriver": "C:/Github Projects/2021-Software-Contest/chromedriver",
 #     }
 
 #     paths = response.download(arguments)
-#     # print(paths)
+#     print(paths)
 
 
 # * Bing, 정말 2000개의 이미지가 검색되는지는 모르겠지만, 중복으로 갯수를 채우는 듯하므로 최대 500개 정도로 제한할 것.

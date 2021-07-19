@@ -7,9 +7,8 @@ chromedriver*
 yolov4-custom-functions-master*
 penDetect-main*
 
-# 외부 설명서
-darknet.pdf
+downloads
 
 # 계획서 정리 안 함
-test.md
+test.*
 plan.md
