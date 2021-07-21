@@ -29,7 +29,7 @@ for folder in os.listdir(labels_path):
 
         # * image 색채 조정
         # data.append(tf.image.adjust_brightness(data[0], 0.4))  # 밝은 것을 밝게
-        data.append(tf.image.adjust_contrast(data[0], 0.8))  # 대조 확실하게
+        data.append(tf.image.adjust_contrast(data[0], 0.8))  # 대조
         # data.append(tf.image.adjust_gamma(data[0]))  # 감마 높이기
         data.append(tf.image.adjust_saturation(data[0], 3))  # 주변 채도 (높게) 맞추기
 
