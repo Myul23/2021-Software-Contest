@@ -7,17 +7,16 @@ from PIL import Image
 import matplotlib.pyplot as plt
 
 
-# namespace = ["0"]
-path = "음료수캔"
-# path1 = "1.BBox_manual_labeling/Images/001_plastic_soda"
-# path2 = "1.BBox_manual_labeling/Labels/001_plastic_soda"
-path1 = "downloads/음료수캔"
+# namespace = [551]
+# path = "1.BBox_manual_labeling/Images/001"
+# path1 = "1.BBox_manual_labeling/Images/009"
+# path2 = "1.BBox_manual_labeling/Labels/009"
 
 # ! 위치로 file 이름을 찾자.
-# for idx, files in enumerate(os.listdir(path1)):
-#     if files.split(".")[0] in namespace:
-#         print(idx)
-#         # break
+# for idx, files in enumerate(os.listdir(path)):
+#     # if files.split(".")[0] in namespace:
+#     if idx in namespace:
+#         print(files)
 
 
 # ! 파일을 제대로 지우지 않아서
@@ -100,27 +99,6 @@ path1 = "downloads/음료수캔"
 #     text_file.close()
 
 
-# ! class name 다르게 준 걸 바꿔주자.
-# for f in os.listdir(path2):
-#     # print(f)
-
-#     s = os.path.join(path2, f)
-#     if not os.path.exists(s):
-#         print(f)
-#         continue
-
-#     text_file = open(s, "r", encoding="UTF-8")
-#     texts = text_file.read()
-#     texts = texts.replace("snackbox", "box")
-#     # print(texts)
-#     text_file.close()
-
-#     text_file = open(s, "w", encoding="UTF-8")
-#     text_file.write(texts)
-#     text_file.close()
-#     # # os.remove(src)
-
-
 # ! Images랑 Label이랑 다른 애가 있다?
 # # length = 0
 # for f1 in os.listdir(path1):
@@ -191,3 +169,44 @@ path1 = "downloads/음료수캔"
 #     dst = os.path.join(path1, f)
 #     os.rename(src, dst)
 # # print(length)
+
+
+# ! class 이름을 잘못 줬다. 근데 다시 하기는 싫다.
+path = "1.BBox_manual_labeling/Labels"
+folder = os.path.join(path, "009")
+# idx = 0
+for f in os.listdir(folder):
+    text_path = os.path.join(folder, f)
+
+    # ? 1. 바꾸고자 하는 게 특이할 때
+    # texts = open(text_path, "r", encoding="UTF-8").read()
+    # texts = texts.replace("person", "paper")
+
+    # ? 2. 바꾸고자 하는 게 특이하지 않을 때
+    text_file = open(text_path, "r", encoding="UTF-8")
+    number = text_file.readline()
+    # print(number)
+
+    texts = number
+    for i in range(int(number)):
+        text = text_file.readline()
+        n = text.split(" ")
+
+        # if n[0] != "paper":
+        #     print(f)
+
+        text = ""
+        if n[0] == "0":
+            text += "paper "
+        else:
+            text += n[0] + " "
+        for i in range(3):
+            text += n[i + 1] + " "
+        text += n[3]
+        texts += text + "\n"
+    text_file.close()
+
+    # print(f, "output:", texts)
+    text_file = open(text_path, "w", encoding="UTF-8")
+    text_file.write(texts)
+    text_file.close()
