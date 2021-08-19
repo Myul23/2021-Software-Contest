@@ -7,10 +7,11 @@ chromedriver*
 yolov4-custom-functions-master*
 penDetect-main*
 
-data
 downloads
-garbage*
-temp*
+newdata_labeling
+custom
+temp
+*.zip
 
 # 계획서 정리 안 함
 test.*

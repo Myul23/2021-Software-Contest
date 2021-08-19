@@ -100,7 +100,7 @@ import matplotlib.pyplot as plt
 
 
 # ! Images랑 Label이랑 다른 애가 있다?
-# # length = 0
+# length = 0
 # for f1 in os.listdir(path1):
 #     flag = False
 #     for f2 in os.listdir(path2):
@@ -108,9 +108,31 @@ import matplotlib.pyplot as plt
 #             flag = True
 #     if flag is False:
 #         print(f1)
-#         # break
-# #     length += 1
-# # print(length)
+#     break
+#     length += 1
+# print(length)
+
+# path11 = "images/"
+# path22 = "labels_formal/"
+# for i in range(9):
+#     path1 = path11 + str(i)
+#     path2 = path22 + str(i)
+#     # print(path1, path2)
+#     for f1 in os.listdir(path1):
+#         flag = False
+#         for f2 in os.listdir(path2):
+#             if f1.split(".")[0] == f2.split(".")[0]:
+#                 flag = True
+#         if flag is False:
+#             print(f1)
+#     for f1 in os.listdir(path2):
+#         flag = False
+#         for f2 in os.listdir(path1):
+#             if f1.split(".")[0] == f2.split(".")[0]:
+#                 flag = True
+#         if flag is False:
+#             print(f1)
+#     print(i)
 
 
 # ! 찾아서 지우기를 손으로 하니까 귀찮다.
@@ -172,41 +194,41 @@ import matplotlib.pyplot as plt
 
 
 # ! class 이름을 잘못 줬다. 근데 다시 하기는 싫다.
-path = "1.BBox_manual_labeling/Labels"
-folder = os.path.join(path, "009")
-# idx = 0
-for f in os.listdir(folder):
-    text_path = os.path.join(folder, f)
+# path = "1.BBox_manual_labeling/Labels"
+# folder = os.path.join(path, "009")
+# # idx = 0
+# for f in os.listdir(folder):
+#     text_path = os.path.join(folder, f)
 
-    # ? 1. 바꾸고자 하는 게 특이할 때
-    # texts = open(text_path, "r", encoding="UTF-8").read()
-    # texts = texts.replace("person", "paper")
+#     # ? 1. 바꾸고자 하는 게 특이할 때
+#     # texts = open(text_path, "r", encoding="UTF-8").read()
+#     # texts = texts.replace("person", "paper")
 
-    # ? 2. 바꾸고자 하는 게 특이하지 않을 때
-    text_file = open(text_path, "r", encoding="UTF-8")
-    number = text_file.readline()
-    # print(number)
+#     # ? 2. 바꾸고자 하는 게 특이하지 않을 때
+#     text_file = open(text_path, "r", encoding="UTF-8")
+#     number = text_file.readline()
+#     # print(number)
 
-    texts = number
-    for i in range(int(number)):
-        text = text_file.readline()
-        n = text.split(" ")
+#     texts = number
+#     for i in range(int(number)):
+#         text = text_file.readline()
+#         n = text.split(" ")
 
-        # if n[0] != "paper":
-        #     print(f)
+#         # if n[0] != "paper":
+#         #     print(f)
 
-        text = ""
-        if n[0] == "0":
-            text += "paper "
-        else:
-            text += n[0] + " "
-        for i in range(3):
-            text += n[i + 1] + " "
-        text += n[3]
-        texts += text + "\n"
-    text_file.close()
+#         text = ""
+#         if n[0] == "0":
+#             text += "paper "
+#         else:
+#             text += n[0] + " "
+#         for i in range(3):
+#             text += n[i + 1] + " "
+#         text += n[3]
+#         texts += text + "\n"
+#     text_file.close()
 
-    # print(f, "output:", texts)
-    text_file = open(text_path, "w", encoding="UTF-8")
-    text_file.write(texts)
-    text_file.close()
+#     # print(f, "output:", texts)
+#     text_file = open(text_path, "w", encoding="UTF-8")
+#     text_file.write(texts)
+#     text_file.close()

@@ -6,14 +6,15 @@ import tensorflow as tf
 # 참고 https://www.tensorflow.org/api_docs/python/tf/image
 import matplotlib.pyplot as plt
 
-images_path = "./downloads/images_007"
-labels_path = "./downloads/labels_formal_007"
+images_path = "images"
+labels_path = "labels_formal"
 
 # ? shift X, crop X, rotate X
 # labels의 folder 수집
 for folder in os.listdir(labels_path):
     image_path = os.path.join(images_path, folder)
     label_path = os.path.join(labels_path, folder)
+    # print(image_path, label_path)
 
     # label에 있는 이름에 따라 image 수집
     for f in os.listdir(label_path):
